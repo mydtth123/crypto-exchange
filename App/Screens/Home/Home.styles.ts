@@ -37,34 +37,8 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
 
-  coinContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    minHeight: 64,
+  contentContainer: {
     paddingHorizontal: Metrics.doubleBaseMargin,
-    backgroundColor: Colors.basic200,
-    borderRadius: Metrics.regularMargin,
-  },
-  coinIcon: {
-    width: Metrics.largeSection,
-    height: Metrics.largeSection,
-    marginRight: Metrics.largeMargin,
-  },
-  coinName: {
-    fontSize: Fonts.size.medium,
-    fontFamily: Fonts.type.semiBold,
-    color: Colors.basic900,
-  },
-  coinChanged: {
-    fontSize: Fonts.size.small,
-    fontFamily: Fonts.type.regular,
-    color: Colors.basic600,
-  },
-  coinPrice: {
-    fontSize: Fonts.size.regular,
-    fontFamily: Fonts.type.bold,
-    color: Colors.basic900,
-    marginLeft: 'auto',
   },
   separator: {
     height: Metrics.regularMargin,
@@ -88,5 +62,58 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginLeft: 'auto',
+  },
+
+  walletBadgeContainer: {
+    backgroundColor: Colors.primary900,
+    padding: Metrics.doubleBaseMargin,
+    borderRadius: Metrics.largeMargin,
+    marginTop: Metrics.doubleBaseMargin,
+  },
+  walletBadgeName: {
+    fontSize: Fonts.size.medium,
+    fontFamily: Fonts.type.semiBold,
+    color: Colors.white,
+  },
+  lineThrough: {
+    borderBottomWidth: 1,
+    borderBottomColor: Colors.primary400,
+    marginVertical: Metrics.baseMargin,
+  },
+  walletBadgeWrapper: {
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+    justifyContent: 'space-between',
+  },
+  totalBalanceText: {
+    fontSize: Fonts.size.h3,
+    fontFamily: Fonts.type.bold,
+    color: Colors.white,
+  },
+  convertBalanceText: {
+    fontSize: Fonts.size.regular,
+    fontFamily: Fonts.type.semiBold,
+    color: Colors.primary300,
+    marginTop: 4,
+  },
+  walletBadgeHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  walletBadgeNumber: {
+    fontSize: Fonts.size.medium,
+    fontFamily: Fonts.type.regular,
+    color: Colors.primary300,
+  },
+  walletBadgeCopy: {
+    marginLeft: 'auto',
+    width: 24,
+    height: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+
+  homeBanner: {
+    ...StyleSheet.absoluteFillObject,
   },
 });

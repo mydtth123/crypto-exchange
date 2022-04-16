@@ -27,17 +27,27 @@ export interface CoinProps {
   /**
    * Amount of the coin
    */
-  amount?: number;
+  amount: number;
 
   /**
-   * Currency of the coin
+   * Vnd of the coin
    */
-  currency?: number;
+  vnd?: number;
 
   /**
-   * 24 hour change of the coin
+   * vnd_24h_change of the coin
    */
-  change?: number;
+  vnd24hChange?: number;
+
+  /**
+   * USD of the coin
+   */
+  usd?: number;
+
+  /**
+   * usd_24h_change of the coin
+   */
+  usd24hChange?: number;
 
   /**
    * Is the coin active
@@ -48,6 +58,8 @@ export interface CoinProps {
 export interface ExchangeProps {
   vnd: number;
   vnd_24h_change: number;
+  usd: number;
+  usd_24h_change: number;
 }
 
 export interface SimplePriceProps {

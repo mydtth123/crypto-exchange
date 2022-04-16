@@ -16,7 +16,7 @@ export const fetchApi = async (url: string, method: string, body?: any) => {
 export const getCoinPrice = async (
   coins: string,
 ): Promise<SimplePriceProps> => {
-  const url = `https://api.coingecko.com/api/v3/simple/price?ids=${coins}&vs_currencies=vnd&include_24hr_change=true`;
+  const url = `https://api.coingecko.com/api/v3/simple/price?ids=${coins}&vs_currencies=vnd%2Cusd&include_24hr_change=true`;
   const data = await fetchApi(url, 'GET');
   return data;
 };
@@ -31,8 +31,10 @@ export const getSimpleCoins = async (
   if (data) {
     let newData: CoinProps[] = listCoinActive.map(coin => ({
       ...coin,
-      change: data[coin.cid].vnd_24h_change,
-      currency: data[coin.cid].vnd,
+      vnd24hChange: data[coin.cid].vnd_24h_change,
+      vnd: data[coin.cid].vnd,
+      usd24hChange: data[coin.cid].usd_24h_change,
+      usd: data[coin.cid].usd,
     }));
     setCoins([
       ...newData,

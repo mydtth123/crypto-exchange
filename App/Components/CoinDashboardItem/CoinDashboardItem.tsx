@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import {Colors, Fonts, Metrics} from '@app/Themes';
 import {CoinProps} from '@app/Screens/Home/Home.props';
+import {formatMoney} from '@app/Constants/Constants';
 
 const COIN_CONTAINER: ViewStyle = {
   flexDirection: 'row',
@@ -49,7 +50,7 @@ const CHANGED_RED: TextStyle = {
 };
 
 export function CoinDashboardItem({coin}: {coin: CoinProps}) {
-  const {icon, name, symbol, amount, currency, change} = coin;
+  const {icon, name, symbol, amount, vnd, vnd24hChange} = coin;
 
   return (
     <TouchableOpacity style={COIN_CONTAINER}>
@@ -57,14 +58,13 @@ export function CoinDashboardItem({coin}: {coin: CoinProps}) {
       <View>
         <Text style={COIN_NAME}>{name}</Text>
         <Text style={COIN_PRICE_CHANGE}>
-          {currency
-            ? currency.toLocaleString('vn-VN', {
-                style: 'currency',
-                currency: 'VND',
-              })
-            : '-'}
-          <Text style={[CHANGED, change && change < 0 ? CHANGED_RED : null]}>
-            {change ? ` ${change?.toFixed(2)}%` : ''}
+          {vnd ? `${formatMoney(vnd)} VND` : '-'}
+          <Text
+            style={[
+              CHANGED,
+              vnd24hChange && vnd24hChange < 0 ? CHANGED_RED : null,
+            ]}>
+            {vnd24hChange ? ` ${vnd24hChange?.toFixed(2)}%` : ''}
           </Text>
         </Text>
       </View>
