@@ -9,10 +9,13 @@ import {AppContext} from '@app/Services/AppProvider';
 import {CoinProps} from '../Home/Home.props';
 import styles from '@app/Screens/CoinsModal/CoinsModal.styles';
 import {Switch} from '@app/Components/Switch/Switch';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 export const CoinsModalScreen: FC<
   NativeStackScreenProps<NavigatorParamList, 'home'>
 > = () => {
+  const insets = useSafeAreaInsets();
+
   const {coins, setCoins} = useContext(AppContext);
   const [search, setSearch] = useState<string>('');
   const [list, setList] = useState<CoinProps[]>([]);
@@ -106,6 +109,7 @@ export const CoinsModalScreen: FC<
         renderItem={renderItem}
         initialNumToRender={10}
         maxToRenderPerBatch={10}
+        contentContainerStyle={{paddingBottom: insets.bottom}}
       />
     </Screen>
   );
