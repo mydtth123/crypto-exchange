@@ -4,7 +4,7 @@
 - Open terminal and run command:
 
 ```
-$ cd /path-to-project/Pizza-App/
+$ cd /path-to-project/crypto-exchange/
 $ yarn install
 $ cd ios/ && pod install && cd ../
 $ npx react-native run-ios/run-android
