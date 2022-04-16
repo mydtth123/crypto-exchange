@@ -10,6 +10,7 @@ const colors = {
   primary400: '#68B8F8',
   primary800: '#1C94F4',
   primary900: '#1273EA',
+  error: '#C74544',
 };
 
 export default colors;

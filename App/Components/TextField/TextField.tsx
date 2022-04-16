@@ -18,10 +18,10 @@ const INPUT: TextStyle = {
   borderWidth: 1,
   borderColor: Colors.basic500,
   borderRadius: 8,
-  marginTop: 4,
   paddingHorizontal: Metrics.largeMargin,
 };
 const LABEL: TextStyle = {
+  marginBottom: 4,
   fontSize: Fonts.size.tiny,
   fontFamily: Fonts.type.bold,
   color: Colors.basic700,
@@ -77,7 +77,7 @@ export function TextField(props: TextFieldProps) {
 
   return (
     <View style={styleOverride}>
-      <Text style={labelStyles}>{label}</Text>
+      {label ? <Text style={labelStyles}>{label}</Text> : null}
       <TextInput
         placeholder={placeholder}
         {...rest}

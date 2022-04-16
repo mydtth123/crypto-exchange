@@ -8,11 +8,16 @@
  * @format
  */
 
-import AppNavigator from '../Navigation/AppNavigation';
 import React from 'react';
+import AppNavigator from '../Navigation/AppNavigation';
+import AppProvider from '../Services/AppProvider';
 
 const App = () => {
-  return <AppNavigator />;
+  return (
+    <AppProvider>
+      <AppNavigator />
+    </AppProvider>
+  );
 };
 
 export default App;
